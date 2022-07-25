@@ -2,8 +2,6 @@ package com.pds.balanz.presentation.crypto_list
 
 
 import GetCryptosUseCase
-import androidx.compose.runtime.State
-import androidx.compose.runtime.mutableStateOf
 import com.pds.balanz.general.DataEvent
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -12,7 +10,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
