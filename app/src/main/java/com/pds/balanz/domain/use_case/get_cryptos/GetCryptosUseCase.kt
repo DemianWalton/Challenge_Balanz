@@ -1,3 +1,4 @@
+package com.pds.balanz.domain.use_case.get_cryptos
 
 import com.pds.balanz.data.remote.dto.toCrypto
 import com.pds.balanz.domain.model.Crypto
@@ -15,14 +16,14 @@ class GetCryptosUseCase @Inject constructor(
     //Execute
     operator fun invoke(): Flow<DataEvent<List<Crypto>>> = flow {
         try {
-            emit(DataEvent.Loading())
+            emit(DataEvent.Loading<List<Crypto>>())
             val cryptos = repository.getCryptos().map { it.toCrypto() }
-            emit(DataEvent.Success(cryptos))
+            emit(DataEvent.Success<List<Crypto>>(cryptos))
         } catch (e: HttpException) {
-            emit(DataEvent.Error(e.localizedMessage ?: "HttpException"))
+            emit(DataEvent.Error<List<Crypto>>(e.localizedMessage ?: "HttpException"))
         } catch (e: IOException) {
             //Conection or server problems
-            emit(DataEvent.Error(e.localizedMessage ?: "IOException"))
+            emit(DataEvent.Error<List<Crypto>>(e.localizedMessage ?: "IOException"))
         }
     }
 

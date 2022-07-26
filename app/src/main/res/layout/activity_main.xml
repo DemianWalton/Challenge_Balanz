@@ -7,71 +7,181 @@
     tools:context=".presentation.ui.MainActivity">
 
     <ImageView
+        android:id="@+id/imageView3"
         android:layout_width="0dp"
-        android:layout_height="75dp"
+        android:layout_height="0dp"
         android:background="@drawable/main_semi_circle_background"
+        app:layout_constraintBottom_toTopOf="@+id/top_second_guideline"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:gravity="center_vertical"
-        android:text="Home"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <TextView
-        android:id="@+id/textView"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_first_guideline"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:gravity="center_vertical"
-        android:text="Movimientos"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/textView3"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.02" />
 
-    <TextView
-        android:id="@+id/textView3"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_second_guideline"
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:gravity="center_vertical"
-        android:text="Configuración"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.06" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.94" />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/cl_home"
         android:layout_width="0dp"
-        android:layout_height="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        android:layout_height="0dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@id/top_second_guideline"
+        app:layout_constraintEnd_toStartOf="@+id/cl_movements"
+        app:layout_constraintStart_toEndOf="@+id/left_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/top_first_guideline">
+
+        <ImageView
+            android:id="@+id/iv_home"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_home"
+            app:layout_constraintBottom_toTopOf="@+id/tv_home"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
 
         <TextView
+            android:id="@+id/tv_home"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cotizaciones en Pesos Argentinos"
-            android:textColor="@color/white"
+            android:layout_height="0dp"
+            android:gravity="center_vertical"
+            android:text="Home"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/iv_home" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_movements"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@id/top_second_guideline"
+        app:layout_constraintEnd_toStartOf="@id/cl_configuration"
+        app:layout_constraintStart_toEndOf="@+id/cl_home"
+        app:layout_constraintTop_toBottomOf="@+id/top_first_guideline">
+
+        <ImageView
+            android:id="@+id/iv_movements"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_movements"
+            app:layout_constraintBottom_toTopOf="@+id/tv_movements"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+
+        <TextView
+            android:id="@+id/tv_movements"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:gravity="center_vertical"
+            android:text="Movimientos"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_movements" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_configuration"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/white"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@id/top_second_guideline"
+        app:layout_constraintEnd_toEndOf="@id/right_guideline"
+        app:layout_constraintStart_toEndOf="@+id/cl_movements"
+        app:layout_constraintTop_toBottomOf="@+id/top_first_guideline">
+
+        <ImageView
+            android:id="@+id/iv_configuration"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/ic_settings"
+            app:layout_constraintBottom_toTopOf="@+id/tv_configuration"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+
+        <TextView
+            android:id="@+id/tv_configuration"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:gravity="center_vertical"
+            android:text="Configuración"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_configuration" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_quotation"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_marginTop="10dp"
+        android:hint="Cotizaciones en Pesos Argentinos"
+        app:layout_constraintEnd_toEndOf="@+id/right_guideline"
+        app:layout_constraintStart_toStartOf="@+id/left_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/top_second_guideline">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextOutlined"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <TextView
         android:id="@+id/textView4"
@@ -79,11 +189,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="Monedas disponibles"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+        app:layout_constraintStart_toStartOf="@+id/left_guideline"
+        app:layout_constraintTop_toBottomOf="@+id/til_quotation" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_main"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,10 +1,10 @@
 package com.pds.balanz.presentation.crypto_list
 
 
-import GetCryptosUseCase
 import com.pds.balanz.general.DataEvent
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.pds.balanz.domain.use_case.get_cryptos.GetCryptosUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

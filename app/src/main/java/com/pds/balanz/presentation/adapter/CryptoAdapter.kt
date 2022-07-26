@@ -11,6 +11,32 @@ import com.pds.balanz.R
 import com.pds.balanz.domain.model.Crypto
 
 
+/*class CryptoAdapter(private val dataSet: Array<String>) :
+    RecyclerView.Adapter<CryptoAdapter.CryptoViewHolder>() {
+
+    class CryptoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val textView: TextView
+
+        init {
+            textView = view.findViewById(R.id.textView)
+        }
+    }
+
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): CryptoViewHolder {
+        val view = LayoutInflater.from(viewGroup.context)
+            .inflate(R.layout.item_currency, viewGroup, false)
+
+        return CryptoViewHolder(view)
+    }
+
+    override fun onBindViewHolder(viewHolder: CryptoViewHolder, position: Int) {
+        viewHolder.textView.text = dataSet[position]
+    }
+
+    override fun getItemCount() = dataSet.size
+
+}*/
+
 class CryptoAdapter(
 ) : ListAdapter<Crypto, CryptoViewHolder>(CryptoDiffCallback) {
 

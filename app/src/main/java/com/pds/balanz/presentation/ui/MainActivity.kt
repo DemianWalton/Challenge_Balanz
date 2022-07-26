@@ -1,13 +1,11 @@
 package com.pds.balanz.presentation.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.viewModelScope
-import com.pds.balanz.R
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.pds.balanz.databinding.ActivityMainBinding
-import com.pds.balanz.general.DataEvent
 import com.pds.balanz.presentation.adapter.CryptoAdapter
 import com.pds.balanz.presentation.crypto_list.CryptoListState
 import com.pds.balanz.presentation.crypto_list.CryptoListViewModel
@@ -26,14 +24,18 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.rvMain.layoutManager = LinearLayoutManager(this)
+
         lifecycleScope.launchWhenStarted {
             viewModel.state.collect { event ->
                 when (event) {
                     is CryptoListState.Success -> {
                         adapter!!.submitList(event.result)
+                        binding.rvMain.adapter = adapter
                     }
                     is CryptoListState.Failure -> {
                         adapter!!.submitList(event.result)
+                        binding.rvMain.adapter = adapter
                     }
                     is CryptoListState.Loading -> {
                     }
